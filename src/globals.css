@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Scrollbar Styling */
+/* Scrollbar Style */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(186, 51, 228) rgb(110, 51, 228, 1);
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 20px;
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  @apply bg-gradient-to-tr from-amber-500 via-orange-500 to-yellow-600;
+}
+
+html {
+  @apply font-primary;
+}
+
+body {
+  background-color: white;
+  color: black;
+  @apply transition duration-300;
+}
+
+.dark body {
+  background-color: black;
+  color: white;
+}
+
+.nav_style {
+  @apply w-full h-20 flex justify-between items-center py-3 container px-6 sm:px-12 lg:px-0;
+}
+
+.github_btn {
+  @apply py-[0.4rem] px-3 sm:px-5 sm:text-base text-sm flex justify-center items-center gap-2 text-center rounded-full border-[3.5px] border-black text-white bg-black hover:bg-white hover:text-black font-semibold transition ease-in-out cursor-pointer dark:border-slate-500 dark:bg-slate-500 dark:hover:text-white dark:hover:bg-black;
+}
+
+.text_orange {
+  @apply bg-clip-text text-transparent bg-gradient-to-tr from-amber-500 via-orange-500 to-yellow-600;
+}
+
+.wrapper {
+  @apply flex justify-center items-center flex-col;
+}
+
+.wrapper-content {
+  @apply mt-12 container flex justify-between items-center lg:flex-row flex-col gap-3 px-6 sm:px-12 lg:px-0;
+}
+
+.wrapper-content-about {
+  @apply mt-20 container flex justify-between items-center lg:flex-row flex-col px-6 sm:px-12 lg:px-0;
+}
+
+.start_btn {
+  @apply bg-orange-600 gap-2 sm:gap-3 shadow px-4 sm:px-5 py-2 sm:py-3 text-base sm:text-xl rounded-xl text-white;
+}
+
+.about_button_smkdev {
+  @apply px-5 py-2 sm:py-3 text-white bg-orange-600 rounded-lg text-sm sm:text-lg shadow;
+}
+
+.button-to-top {
+  @apply fixed bottom-5 right-5 text-center rounded-full w-10 h-10 sm:w-12 sm:h-12 flex justify-center items-center text-xl sm:text-2xl bg-orange-600 text-white cursor-pointer;
+}
+
+.card-link {
+  @apply border border-slate-300 px-4 py-3 rounded-xl w-full bg-slate-900 flex justify-start items-center gap-4;
+}
+
+/* Loading */
+.custom-loader {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  animation: s4 4s infinite;
+}
+.custom-loader::before,
+.custom-loader::after {    
+  content:"";
+  grid-area: 1/1;
+  border:8px solid;
+  border-radius: 50%;
+  border-color:rgb(244, 63, 94) rgb(244, 63, 94) #0000 #0000;
+  mix-blend-mode: darken;
+  animation: s4 1s infinite linear;
+}
+.custom-loader::after {
+  border-color:#0000 #0000 #E4E4ED #E4E4ED;
+  animation-direction: reverse;
+}
+
+@keyframes s4{ 
+  100%{transform: rotate(1turn)}
+}
